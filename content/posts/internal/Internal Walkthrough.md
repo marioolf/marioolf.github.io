@@ -1,6 +1,13 @@
++++
+draft = false
+title = 'Internal Walkthrough'
+tags = ["TryHackMe"]
++++
+
 So lets deploy the machine and start enumerating.
 
-![[Pasted image 20241116163637.png]]
+![Internal first image](/images/internal/internal1.png)
+
 
 We can see ssh open on port 22 and a http web server on port 80. If we enter on 10.10.199.61 we see Apache2 Ubuntu Default Page.
 

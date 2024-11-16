@@ -2,20 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:35113/about/</loc>
+    <loc>http://localhost:35427/about/</loc>
     <lastmod>2024-11-16T13:47:50+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:35113/</loc>
+    <loc>http://localhost:35427/</loc>
     <lastmod>2024-11-16T13:47:50+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:35113/posts/</loc>
+    <loc>http://localhost:35427/posts/</loc>
     <lastmod>2024-11-16T13:03:14+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:35113/posts/primer-walkthrough/</loc>
+    <loc>http://localhost:35427/posts/primer-walkthrough/</loc>
     <lastmod>2024-11-16T13:03:14+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:35113/categories/</loc>
+    <loc>http://localhost:35427/categories/</loc>
   </url><url>
-    <loc>http://localhost:35113/tags/</loc>
+    <loc>http://localhost:35427/posts/internal/internal-walkthrough/</loc>
+  </url><url>
+    <loc>http://localhost:35427/tags/</loc>
+  </url><url>
+    <loc>http://localhost:35427/tags/tryhackme/</loc>
   </url>
 </urlset>

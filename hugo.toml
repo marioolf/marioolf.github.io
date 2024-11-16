@@ -6,10 +6,11 @@ theme = "cactus"
 [params]
   showProjectsList = true
   projectsUrl = "https://github.com/marioolf"
-  description = "Cybersecurity Researcher. MSc in Cybersecurity. Computer Science Engineer. Here I post personal researchs, projects and walkthroughs from different certifications."
+  description = "Cybersecurity Researcher @ Gradiant. MSc in Cybersecurity. Computer Science Engineer. Here I post personal researchs, projects and walkthroughs from different certifications."
   colortheme = "dark"
   logo = "/images/logo.png"
   css = ["css/custom.css"]
+  mainSectionTitle = "Recent Posts"
 
 [[params.social]]
     name = "linkedin"

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mario López</title>
-    <link>http://localhost:34979/</link>
+    <link>http://localhost:36337/</link>
     <description>Recent content on Mario López</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Nov 2024 13:47:50 +0100</lastBuildDate>
-    <atom:link href="http://localhost:34979/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:36337/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://localhost:34979/about/</link>
+      <link>http://localhost:36337/about/</link>
       <pubDate>Sat, 16 Nov 2024 13:47:50 +0100</pubDate>
-      <guid>http://localhost:34979/about/</guid>
+      <guid>http://localhost:36337/about/</guid>
       <description>&lt;p&gt;About Me!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Primer Walkthrough</title>
-      <link>http://localhost:34979/posts/primer-walkthrough/</link>
+      <link>http://localhost:36337/posts/primer-walkthrough/</link>
       <pubDate>Sat, 16 Nov 2024 13:03:14 +0100</pubDate>
-      <guid>http://localhost:34979/posts/primer-walkthrough/</guid>
+      <guid>http://localhost:36337/posts/primer-walkthrough/</guid>
       <description>&lt;p&gt;Probando un walkthrough&lt;/p&gt;</description>
     </item>
   </channel>

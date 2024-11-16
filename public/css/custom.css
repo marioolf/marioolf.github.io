@@ -1,0 +1,23 @@
+.h1, .posttitle{
+    color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+}
+
+#header #nav ul a{
+    color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+}
+
+#header #nav ul li{
+    border-color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+}
+
+#header #nav{
+    color: #f9da9c !important; /* Puedes elegir otro color específico aquí */
+}
+
+#header-post #nav ul a{
+    color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+}
+
+#header-post .active {
+    color: #FFC857 !important;
+}

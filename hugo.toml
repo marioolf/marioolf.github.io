@@ -9,6 +9,7 @@ theme = "cactus"
   description = "Cybersecurity Researcher. MSc in Cybersecurity. Computer Science Engineer. Here I post personal researchs, projects and walkthroughs from different certifications."
   colortheme = "dark"
   logo = "/images/logo.png"
+  css = ["css/custom.css"]
 
 [[menu.main]]
 name = "Home"

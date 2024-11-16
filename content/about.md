@@ -4,5 +4,13 @@ draft = false
 title = 'About'
 +++
 
+I work as a Cybersecurity Researcher mainly focused on Confidential Computing technologies and Hardware Hacking. Also, I have deep interest on Pentesting and Active Directory Abuse.
 
-About Me!
+# Studies
+- MSc in Cybersecurity from UCAM (Universidad Católica San Antonio de Murcia)
+- Degree in Computer Science from UVigo (Universidade de Vigo)
+- Erasmus+ in Computer Science at ViKo University of Applied Science in Lithuania
+
+# Certifications
+- Cryptography I from Standford University
+- eJPT Junior Penetration Tester from eLearnSecurity 

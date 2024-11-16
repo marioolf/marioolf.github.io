@@ -11,6 +11,18 @@ theme = "cactus"
   logo = "/images/logo.png"
   css = ["css/custom.css"]
 
+[[params.social]]
+    name = "linkedin"
+    link = "https://www.linkedin.com/in/mariolopezfeijoo/"
+
+[[params.social]]    
+    name = "email"
+    link = "mariolfeijoo@gmail.com" # no need for "mailto:" at the start
+
+[[params.social]]  
+    name = "github"
+    link = "https://github.com/marioolf"
+
 [[menu.main]]
 name = "Home"
 url = "/"

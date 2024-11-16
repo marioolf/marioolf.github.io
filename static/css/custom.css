@@ -1,21 +1,21 @@
 .h1, .posttitle{
-    color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+    color: #FFC857 !important;
 }
 
 #header #nav ul a{
-    color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+    color: #FFC857 !important;
 }
 
 #header #nav ul li{
-    border-color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+    border-color: #FFC857 !important;
 }
 
 #header #nav{
-    color: #f9da9c !important; /* Puedes elegir otro color específico aquí */
+    color: #f9da9c !important;
 }
 
 #header-post #nav ul a{
-    color: #FFC857 !important; /* Puedes elegir otro color específico aquí */
+    color: #FFC857 !important;
 }
 
 #header-post .active {

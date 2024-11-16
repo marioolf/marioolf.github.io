@@ -1,14 +1,19 @@
 {
     "list": [
        {
-          "name":"Hexo",
-          "url":"https://hexo.io/",
-          "desc":"A fast, simple & powerful blog framework"
+          "name":"CVE Notification Tool",
+          "url":"https://github.com/marioolf/cve-analysis",
+          "desc":"MSc Final Project. Analysis of CVE remediation times and Notification Tool for personal software with vulnerabilities."
        },
        {
-          "name":"Font Awesome",
-          "url":"http://fontawesome.io/",
-          "desc":"The iconic font and CSS toolkit"
-       }
+          "name":"Rustlings Solutions",
+          "url":"https://github.com/marioolf/rustlings-solved",
+          "desc":"Solutions from Rustlings exercices for practicing Rust."
+       },
+       {
+        "name":"Password Manager",
+        "url":"https://github.com/marioolf/PasswordManager",
+        "desc":"Simple password manager for Information Security degree subject. Written in Java, supports multiple encryption algorithms."
+        }
     ]
  }

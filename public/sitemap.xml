@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:34979/about/</loc>
+    <lastmod>2024-11-16T13:47:50+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:34979/</loc>
+    <lastmod>2024-11-16T13:47:50+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:34979/posts/</loc>
+    <lastmod>2024-11-16T13:03:14+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:34979/posts/primer-walkthrough/</loc>
+    <lastmod>2024-11-16T13:03:14+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:34979/categories/</loc>
+  </url><url>
+    <loc>http://localhost:34979/tags/</loc>
+  </url>
+</urlset>

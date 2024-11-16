@@ -1,0 +1,31 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Mario López'
+theme = "cactus"
+
+[params]
+  showProjectsList = true
+  projectsUrl = "https://github.com/marioolf"
+  description = "Cybersecurity Researcher. MSc in Cybersecurity. Computer Science Engineer. Here I post personal researchs, projects and walkthroughs from different certifications."
+  colortheme = "dark"
+  logo = "/images/logo.png"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Writings"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4

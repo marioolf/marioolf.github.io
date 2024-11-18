@@ -14,3 +14,7 @@ I work as a Cybersecurity Researcher mainly focused on Confidential Computing te
 # Certifications
 - Cryptography I from Standford University
 - eJPT Junior Penetration Tester from eLearnSecurity 
+
+# Extra
+
+![tryhackme](/images/puursuit.png)

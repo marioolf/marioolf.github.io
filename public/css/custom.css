@@ -2,8 +2,13 @@
     color: #FFC857 !important;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 #header #nav ul a{
     color: #FFC857 !important;
+    border-bottom: 10px;
 }
 
 #header #nav ul li{

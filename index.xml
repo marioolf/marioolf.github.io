@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mario López</title><link>https://example.org/</link><description>Recent content on Mario López</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 18 Nov 2024 21:56:18 +0100</lastBuildDate><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal Walkthrough</title><link>https://example.org/posts/internal/internal-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://example.org/posts/internal/internal-walkthrough/</guid><description>&lt;p>So lets deploy the machine and start enumerating.&lt;/p>
-&lt;p>&lt;img src="https://example.org/images/internal/0.png" alt="internal1">&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mario López</title><link>https://marioolf.github.io/</link><description>Recent content on Mario López</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 18 Nov 2024 21:56:18 +0100</lastBuildDate><atom:link href="https://marioolf.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal Walkthrough</title><link>https://marioolf.github.io/posts/internal/internal-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://marioolf.github.io/posts/internal/internal-walkthrough/</guid><description>&lt;p>So lets deploy the machine and start enumerating.&lt;/p>
+&lt;p>&lt;img src="https://marioolf.github.io/images/internal/0.png" alt="internal1">&lt;/p>
 &lt;p>We can see ssh open on port 22 and a http web server on port 80. If we enter on 10.10.199.61 we see Apache2 Ubuntu Default Page.&lt;/p>
-&lt;p>&lt;img src="https://example.org/images/internal/1.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://marioolf.github.io/images/internal/1.png" alt="">&lt;/p>
 &lt;p>After some directory enumeration, we find the following:&lt;/p>
 &lt;pre tabindex="0">&lt;code>/blog
 
@@ -10,9 +10,9 @@
 /javascript
 
 /wordpress/wp-login.php
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://example.org/images/internal/2.png" alt="">&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://marioolf.github.io/images/internal/2.png" alt="">&lt;/p>
 &lt;p>It is necessary to add internal.thm to our /etc/hosts file to navigate through the website.&lt;/p>
-&lt;p>Since we know admin is a user because he has a post on the website, we can brute force the login page using wpscan and rockyou.txt for the password.&lt;/p></description></item><item><title>Wreath Walkthrough</title><link>https://example.org/posts/wreath/wreath-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://example.org/posts/wreath/wreath-walkthrough/</guid><description>&lt;h1 id="enumeration">Enumeration&lt;/h1>
+&lt;p>Since we know admin is a user because he has a post on the website, we can brute force the login page using wpscan and rockyou.txt for the password.&lt;/p></description></item><item><title>Wreath Walkthrough</title><link>https://marioolf.github.io/posts/wreath/wreath-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://marioolf.github.io/posts/wreath/wreath-walkthrough/</guid><description>&lt;h1 id="enumeration">Enumeration&lt;/h1>
 &lt;p>Nmap scan for open ports&lt;/p>
 &lt;pre tabindex="0">&lt;code>nmap -p-15000 -vv 10.200.81.200
 &lt;/code>&lt;/pre>&lt;p>Nmap scan for OS recognition through headers&lt;/p>
@@ -25,11 +25,11 @@
 &lt;/code>&lt;/pre>&lt;p>If privileges are missing use:&lt;/p>
 &lt;pre tabindex="0">&lt;code>chmod +x yourfile.py
 &lt;/code>&lt;/pre>&lt;p>Now we can open the reverse shell:&lt;/p>
-&lt;p>&lt;img src="https://example.org/images/wreath/wreath1.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://marioolf.github.io/images/wreath/wreath1.png" alt="">&lt;/p>
 &lt;p>Set up netcat listener to catch reverse shell.&lt;/p>
 &lt;pre tabindex="0">&lt;code>nc -lvnp 4444
 &lt;/code>&lt;/pre>&lt;p>Use rlwrap to stabilise the shell.&lt;/p>
-&lt;p>Now lets get ssh credentials since we won&amp;rsquo;t be able to crack password hash.&lt;/p></description></item><item><title>About</title><link>https://example.org/about/</link><pubDate>Sat, 16 Nov 2024 13:47:50 +0100</pubDate><guid>https://example.org/about/</guid><description>&lt;p>I work as a Cybersecurity Researcher mainly focused on Confidential Computing technologies and Hardware Hacking. Also, I have deep interest on Pentesting and Active Directory Abuse.&lt;/p>
+&lt;p>Now lets get ssh credentials since we won&amp;rsquo;t be able to crack password hash.&lt;/p></description></item><item><title>About</title><link>https://marioolf.github.io/about/</link><pubDate>Sat, 16 Nov 2024 13:47:50 +0100</pubDate><guid>https://marioolf.github.io/about/</guid><description>&lt;p>I work as a Cybersecurity Researcher mainly focused on Confidential Computing technologies and Hardware Hacking. Also, I have deep interest on Pentesting and Active Directory Abuse.&lt;/p>
 &lt;h1 id="studies">Studies&lt;/h1>
 &lt;ul>
 &lt;li>MSc in Cybersecurity from UCAM (Universidad Católica San Antonio de Murcia)&lt;/li>
@@ -42,4 +42,4 @@
 &lt;li>eJPT Junior Penetration Tester from eLearnSecurity&lt;/li>
 &lt;/ul>
 &lt;h1 id="extra">Extra&lt;/h1>
-&lt;p>&lt;img src="https://example.org/images/puursuit.png" alt="tryhackme">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://marioolf.github.io/images/puursuit.png" alt="tryhackme">&lt;/p></description></item></channel></rss>

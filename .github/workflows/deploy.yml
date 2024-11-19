@@ -8,8 +8,9 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Hugo
@@ -17,8 +18,8 @@ jobs:
         with:
           hugo-version: 'latest'
 
-      - name: Build Site
-        run: hugo
+      - name: Build site
+        run: hugo --minify
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

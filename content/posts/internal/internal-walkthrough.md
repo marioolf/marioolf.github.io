@@ -2,6 +2,7 @@
 date = '2024-11-18T21:56:18+01:00'
 draft = false
 title = 'Internal Walkthrough'
+tags = ["TryHackMe"]
 +++
 
 So lets deploy the machine and start enumerating.

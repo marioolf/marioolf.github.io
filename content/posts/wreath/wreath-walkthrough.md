@@ -2,10 +2,8 @@
 date = '2024-11-18T21:56:18+01:00'
 draft = false
 title = 'Wreath Walkthrough'
+tags = ["TryHackMe"]
 +++
-
-
-# Wreath Walkthrough
 
 # Enumeration
 

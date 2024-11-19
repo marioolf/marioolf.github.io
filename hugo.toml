@@ -11,6 +11,7 @@ theme = "cactus"
   logo = "/images/logo.png"
   css = ["css/custom.css"]
   mainSectionTitle = "Recent Posts"
+  ignoreLogs = ['warning-goldmark-raw-html']
 
 [[params.social]]
     name = "linkedin"

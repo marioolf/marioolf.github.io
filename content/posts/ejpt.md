@@ -211,13 +211,13 @@ gobuster -u 10.10.10.10 -w /path/to/wordlist.txt
 Rapid7
 
 ```
-{% embed url="https://www.rapid7.com/db/" %}
+https://www.rapid7.com/db/
 ```
 
 Exploit-DB
 
 ```
-{% embed url="https://www.exploit-db.com/" %}
+https://www.exploit-db.com/
 ```
 
 # XSS

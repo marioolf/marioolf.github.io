@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Mario López</title>
+    <link>https://example.org/posts/</link>
+    <description>Recent content in Posts on Mario López</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Nov 2024 21:56:18 +0100</lastBuildDate>
+    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Internal Walkthrough</title>
+      <link>https://example.org/posts/internal/internal-walkthrough/</link>
+      <pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate>
+      <guid>https://example.org/posts/internal/internal-walkthrough/</guid>
+      <description>&lt;p&gt;So lets deploy the machine and start enumerating.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://example.org/images/internal/0.png&#34; alt=&#34;internal1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;We can see ssh open on port 22 and a http web server on port 80. If we enter on 10.10.199.61 we see Apache2 Ubuntu Default Page.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://example.org/images/internal/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;After some directory enumeration, we find the following:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/blog&#xA;&#xA;/phpmyadmin&#xA;&#xA;/javascript&#xA;&#xA;/wordpress/wp-login.php&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://example.org/images/internal/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;It is necessary to add internal.thm to our /etc/hosts file to navigate through the website.&lt;/p&gt;&#xA;&lt;p&gt;Since we know admin is a user because he has a post on the website, we can brute force the login page using wpscan and rockyou.txt for the password.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wreath Walkthrough</title>
+      <link>https://example.org/posts/wreath/wreath-walkthrough/</link>
+      <pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate>
+      <guid>https://example.org/posts/wreath/wreath-walkthrough/</guid>
+      <description>&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;&#xA;&lt;p&gt;Nmap scan for open ports&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nmap -p-15000 -vv 10.200.81.200&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nmap scan for OS recognition through headers&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nmap -vv 10.200.81.200 --script=http-headers&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h1&gt;&#xA;&lt;p&gt;Once vulnerability is found, download script from github.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/MuirlandOracle/CVE-2019-15107&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For python pip install:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install python3-pip&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If privileges are missing use:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod +x yourfile.py&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now we can open the reverse shell:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://example.org/images/wreath/wreath1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Set up netcat listener to catch reverse shell.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nc -lvnp 4444&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Use rlwrap to stabilise the shell.&lt;/p&gt;&#xA;&lt;p&gt;Now lets get ssh credentials since we won&amp;rsquo;t be able to crack password hash.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

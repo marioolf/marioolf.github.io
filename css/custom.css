@@ -1,0 +1,28 @@
+.h1, .posttitle{
+    color: #FFC857 !important;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+#header #nav ul a{
+    color: #FFC857 !important;
+    border-bottom: 10px;
+}
+
+#header #nav ul li{
+    border-color: #FFC857 !important;
+}
+
+#header #nav{
+    color: #f9da9c !important;
+}
+
+#header-post #nav ul a{
+    color: #FFC857 !important;
+}
+
+#header-post .active {
+    color: #FFC857 !important;
+}

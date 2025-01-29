@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Mario López'
 theme = "cactus"
 
+[services]
+    [services.googleAnalytics]
+    id = 'G-SVK5GKD04Z'
+
 [params]
   showProjectsList = true
   projectsUrl = "https://github.com/marioolf"

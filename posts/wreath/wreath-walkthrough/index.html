@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -9,49 +9,52 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Wreath Walkthrough | Mario López</title>
-  <link rel = 'canonical' href = 'http://localhost:1313/posts/wreath/wreath-walkthrough/'>
+  <link rel = 'canonical' href = 'https://marioolf.github.io/posts/wreath/wreath-walkthrough/'>
   <meta name="description" content="Cybersecurity Researcher @ Gradiant. MSc in Cybersecurity. Computer Science Engineer. Here I post personal researchs, projects and walkthroughs from different certifications.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="http://localhost:1313/posts/wreath/wreath-walkthrough/">
+  <meta property="og:url" content="https://marioolf.github.io/posts/wreath/wreath-walkthrough/">
   <meta property="og:site_name" content="Mario López">
   <meta property="og:title" content="Wreath Walkthrough">
-  <meta property="og:description" content="Wreath Walkthrough Enumeration Nmap scan for open ports
+  <meta property="og:description" content="Enumeration Nmap scan for open ports
 nmap -p-15000 -vv 10.200.81.200 Nmap scan for OS recognition through headers
 nmap -vv 10.200.81.200 --script=http-headers Exploitation Once vulnerability is found, download script from github.
 git clone https://github.com/MuirlandOracle/CVE-2019-15107 For python pip install:
 sudo apt install python3-pip If privileges are missing use:
 chmod &#43;x yourfile.py Now we can open the reverse shell:
 Set up netcat listener to catch reverse shell.
-nc -lvnp 4444 Use rlwrap to stabilise the shell.">
+nc -lvnp 4444 Use rlwrap to stabilise the shell.
+Now lets get ssh credentials since we won’t be able to crack password hash.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-11-18T21:56:18+01:00">
     <meta property="article:modified_time" content="2024-11-18T21:56:18+01:00">
+    <meta property="article:tag" content="TryHackMe">
 
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Wreath Walkthrough">
-  <meta name="twitter:description" content="Wreath Walkthrough Enumeration Nmap scan for open ports
+  <meta name="twitter:description" content="Enumeration Nmap scan for open ports
 nmap -p-15000 -vv 10.200.81.200 Nmap scan for OS recognition through headers
 nmap -vv 10.200.81.200 --script=http-headers Exploitation Once vulnerability is found, download script from github.
 git clone https://github.com/MuirlandOracle/CVE-2019-15107 For python pip install:
 sudo apt install python3-pip If privileges are missing use:
 chmod &#43;x yourfile.py Now we can open the reverse shell:
 Set up netcat listener to catch reverse shell.
-nc -lvnp 4444 Use rlwrap to stabilise the shell.">
+nc -lvnp 4444 Use rlwrap to stabilise the shell.
+Now lets get ssh credentials since we won’t be able to crack password hash.">
 
   
   
     
   
   
-  <link rel="stylesheet" href="http://localhost:1313/css/styles.eb18d918d69ec01a686d9f6d933fc63709c1d15478544cffb2fbdafb67001fcae7d8aa74717b06a6049da1535922012ab80046dc975c789d1036a472e33b8546.css" integrity="sha512-6xjZGNaewBpobZ9tkz/GNwnB0VR4VEz/svva&#43;2cAH8rn2Kp0cXsGpgSdoVNZIgEquABG3JdceJ0QNqRy4zuFRg=="> 
+  <link rel="stylesheet" href="https://marioolf.github.io/css/styles.bee4af0ebc347a11b05d9d8485bfd4e298f3a1d56a75d580ab509b8cf80a2d4e30d43b466251bf7ccead3842f8fb56343ac44e5c97e3b0c5f706c6218b4cdbcf.css" integrity="sha512-vuSvDrw0ehGwXZ2Ehb/U4pjzodVqddWAq1CbjPgKLU4w1DtGYlG/fM6tOEL4&#43;1Y0OsROXJfjsMX3BsYhi0zbzw=="> 
 
   
-   <link rel="stylesheet" href="http://localhost:1313/css/custom.css"> 
+   <link rel="stylesheet" href="https://marioolf.github.io/css/custom.css"> 
   
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -60,9 +63,25 @@ nc -lvnp 4444 Use rlwrap to stabilise the shell.">
   
 
   
-<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
+<link rel="icon" type="image/png" href="https://marioolf.github.io/images/favicon.ico" />
 
   
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-SVK5GKD04Z"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SVK5GKD04Z');
+        }
+      </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
@@ -91,14 +110,14 @@ nc -lvnp 4444 Use rlwrap to stabilise the shell.">
       <ul>
         
         <li>
-          <a class="icon" href=" http://localhost:1313/about/" aria-label="Previous">
+          <a class="icon" href=" https://marioolf.github.io/about/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/internal/internal-walkthrough/" aria-label="Next">
+          <a class="icon" href="https://marioolf.github.io/posts/internal/internal-walkthrough/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -129,47 +148,47 @@ nc -lvnp 4444 Use rlwrap to stabilise the shell.">
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&text=Wreath%20Walkthrough" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&text=Wreath%20Walkthrough" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&is_video=false&description=Wreath%20Walkthrough" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&is_video=false&description=Wreath%20Walkthrough" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Wreath%20Walkthrough&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Wreath%20Walkthrough&body=Check out this article: https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&name=Wreath%20Walkthrough&description=%3ch1%20id%3d%22wreath-walkthrough%22%3eWreath%20Walkthrough%3c%2fh1%3e%0a%3ch1%20id%3d%22enumeration%22%3eEnumeration%3c%2fh1%3e%0a%3cp%3eNmap%20scan%20for%20open%20ports%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-p-15000%20-vv%2010.200.81.200%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNmap%20scan%20for%20OS%20recognition%20through%20headers%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-vv%2010.200.81.200%20--script%3dhttp-headers%0a%3c%2fcode%3e%3c%2fpre%3e%3ch1%20id%3d%22exploitation%22%3eExploitation%3c%2fh1%3e%0a%3cp%3eOnce%20vulnerability%20is%20found%2c%20download%20script%20from%20github.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3egit%20clone%20https%3a%2f%2fgithub.com%2fMuirlandOracle%2fCVE-2019-15107%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eFor%20python%20pip%20install%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20python3-pip%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eIf%20privileges%20are%20missing%20use%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3echmod%20%2bx%20yourfile.py%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNow%20we%20can%20open%20the%20reverse%20shell%3a%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fwreath%2fwreath1.png%22%20alt%3d%22%22%3e%3c%2fp%3e%0a%3cp%3eSet%20up%20netcat%20listener%20to%20catch%20reverse%20shell.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enc%20-lvnp%204444%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eUse%20rlwrap%20to%20stabilise%20the%20shell.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&name=Wreath%20Walkthrough&description=%3ch1%20id%3d%22enumeration%22%3eEnumeration%3c%2fh1%3e%0a%3cp%3eNmap%20scan%20for%20open%20ports%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-p-15000%20-vv%2010.200.81.200%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNmap%20scan%20for%20OS%20recognition%20through%20headers%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-vv%2010.200.81.200%20--script%3dhttp-headers%0a%3c%2fcode%3e%3c%2fpre%3e%3ch1%20id%3d%22exploitation%22%3eExploitation%3c%2fh1%3e%0a%3cp%3eOnce%20vulnerability%20is%20found%2c%20download%20script%20from%20github.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3egit%20clone%20https%3a%2f%2fgithub.com%2fMuirlandOracle%2fCVE-2019-15107%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eFor%20python%20pip%20install%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20python3-pip%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eIf%20privileges%20are%20missing%20use%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3echmod%20%2bx%20yourfile.py%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNow%20we%20can%20open%20the%20reverse%20shell%3a%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fwreath%2fwreath1.png%22%20alt%3d%22%22%3e%3c%2fp%3e%0a%3cp%3eSet%20up%20netcat%20listener%20to%20catch%20reverse%20shell.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enc%20-lvnp%204444%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eUse%20rlwrap%20to%20stabilise%20the%20shell.%3c%2fp%3e%0a%3cp%3eNow%20lets%20get%20ssh%20credentials%20since%20we%20won%26rsquo%3bt%20be%20able%20to%20crack%20password%20hash.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&t=Wreath%20Walkthrough" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&t=Wreath%20Walkthrough" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -201,14 +220,21 @@ nc -lvnp 4444 Use rlwrap to stabilise the shell.">
         
         
         
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/tryhackme" rel="tag">TryHackMe</a>
+            
+        </div>
+        
       </div>
     </header>
 
   
     
     <div class="content" itemprop="articleBody">
-      <h1 id="wreath-walkthrough">Wreath Walkthrough</h1>
-<h1 id="enumeration">Enumeration</h1>
+      <h1 id="enumeration">Enumeration</h1>
 <p>Nmap scan for open ports</p>
 <pre tabindex="0"><code>nmap -p-15000 -vv 10.200.81.200
 </code></pre><p>Nmap scan for OS recognition through headers</p>
@@ -295,47 +321,47 @@ nc -lvnp 4444 Use rlwrap to stabilise the shell.">
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&text=Wreath%20Walkthrough" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&text=Wreath%20Walkthrough" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&is_video=false&description=Wreath%20Walkthrough" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&is_video=false&description=Wreath%20Walkthrough" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Wreath%20Walkthrough&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Wreath%20Walkthrough&body=Check out this article: https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&title=Wreath%20Walkthrough" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&name=Wreath%20Walkthrough&description=%3ch1%20id%3d%22wreath-walkthrough%22%3eWreath%20Walkthrough%3c%2fh1%3e%0a%3ch1%20id%3d%22enumeration%22%3eEnumeration%3c%2fh1%3e%0a%3cp%3eNmap%20scan%20for%20open%20ports%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-p-15000%20-vv%2010.200.81.200%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNmap%20scan%20for%20OS%20recognition%20through%20headers%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-vv%2010.200.81.200%20--script%3dhttp-headers%0a%3c%2fcode%3e%3c%2fpre%3e%3ch1%20id%3d%22exploitation%22%3eExploitation%3c%2fh1%3e%0a%3cp%3eOnce%20vulnerability%20is%20found%2c%20download%20script%20from%20github.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3egit%20clone%20https%3a%2f%2fgithub.com%2fMuirlandOracle%2fCVE-2019-15107%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eFor%20python%20pip%20install%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20python3-pip%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eIf%20privileges%20are%20missing%20use%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3echmod%20%2bx%20yourfile.py%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNow%20we%20can%20open%20the%20reverse%20shell%3a%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fwreath%2fwreath1.png%22%20alt%3d%22%22%3e%3c%2fp%3e%0a%3cp%3eSet%20up%20netcat%20listener%20to%20catch%20reverse%20shell.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enc%20-lvnp%204444%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eUse%20rlwrap%20to%20stabilise%20the%20shell.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&name=Wreath%20Walkthrough&description=%3ch1%20id%3d%22enumeration%22%3eEnumeration%3c%2fh1%3e%0a%3cp%3eNmap%20scan%20for%20open%20ports%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-p-15000%20-vv%2010.200.81.200%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNmap%20scan%20for%20OS%20recognition%20through%20headers%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enmap%20-vv%2010.200.81.200%20--script%3dhttp-headers%0a%3c%2fcode%3e%3c%2fpre%3e%3ch1%20id%3d%22exploitation%22%3eExploitation%3c%2fh1%3e%0a%3cp%3eOnce%20vulnerability%20is%20found%2c%20download%20script%20from%20github.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3egit%20clone%20https%3a%2f%2fgithub.com%2fMuirlandOracle%2fCVE-2019-15107%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eFor%20python%20pip%20install%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20python3-pip%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eIf%20privileges%20are%20missing%20use%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3echmod%20%2bx%20yourfile.py%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eNow%20we%20can%20open%20the%20reverse%20shell%3a%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fwreath%2fwreath1.png%22%20alt%3d%22%22%3e%3c%2fp%3e%0a%3cp%3eSet%20up%20netcat%20listener%20to%20catch%20reverse%20shell.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enc%20-lvnp%204444%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eUse%20rlwrap%20to%20stabilise%20the%20shell.%3c%2fp%3e%0a%3cp%3eNow%20lets%20get%20ssh%20credentials%20since%20we%20won%26rsquo%3bt%20be%20able%20to%20crack%20password%20hash.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fwreath%2fwreath-walkthrough%2f&t=Wreath%20Walkthrough" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmarioolf.github.io%2fposts%2fwreath%2fwreath-walkthrough%2f&t=Wreath%20Walkthrough" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -363,7 +389,7 @@ nc -lvnp 4444 Use rlwrap to stabilise the shell.">
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2024  Mario López 
+    Copyright  &copy; 2025  Mario López 
   </div>
   <div class="footer-right">
     <nav>

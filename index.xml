@@ -1,45 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mario López</title><link>https://marioolf.github.io/</link><description>Recent content on Mario López</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 18 Nov 2024 21:56:18 +0100</lastBuildDate><atom:link href="https://marioolf.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal Walkthrough</title><link>https://marioolf.github.io/posts/internal/internal-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://marioolf.github.io/posts/internal/internal-walkthrough/</guid><description>&lt;p>So lets deploy the machine and start enumerating.&lt;/p>
-&lt;p>&lt;img src="https://marioolf.github.io/images/internal/0.png" alt="internal1">&lt;/p>
-&lt;p>We can see ssh open on port 22 and a http web server on port 80. If we enter on 10.10.199.61 we see Apache2 Ubuntu Default Page.&lt;/p>
-&lt;p>&lt;img src="https://marioolf.github.io/images/internal/1.png" alt="">&lt;/p>
-&lt;p>After some directory enumeration, we find the following:&lt;/p>
-&lt;pre tabindex="0">&lt;code>/blog
-
-/phpmyadmin
-
-/javascript
-
-/wordpress/wp-login.php
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://marioolf.github.io/images/internal/2.png" alt="">&lt;/p>
-&lt;p>It is necessary to add internal.thm to our /etc/hosts file to navigate through the website.&lt;/p>
-&lt;p>Since we know admin is a user because he has a post on the website, we can brute force the login page using wpscan and rockyou.txt for the password.&lt;/p></description></item><item><title>Wreath Walkthrough</title><link>https://marioolf.github.io/posts/wreath/wreath-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://marioolf.github.io/posts/wreath/wreath-walkthrough/</guid><description>&lt;h1 id="enumeration">Enumeration&lt;/h1>
-&lt;p>Nmap scan for open ports&lt;/p>
-&lt;pre tabindex="0">&lt;code>nmap -p-15000 -vv 10.200.81.200
-&lt;/code>&lt;/pre>&lt;p>Nmap scan for OS recognition through headers&lt;/p>
-&lt;pre tabindex="0">&lt;code>nmap -vv 10.200.81.200 --script=http-headers
-&lt;/code>&lt;/pre>&lt;h1 id="exploitation">Exploitation&lt;/h1>
-&lt;p>Once vulnerability is found, download script from github.&lt;/p>
-&lt;pre tabindex="0">&lt;code>git clone https://github.com/MuirlandOracle/CVE-2019-15107
-&lt;/code>&lt;/pre>&lt;p>For python pip install:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo apt install python3-pip
-&lt;/code>&lt;/pre>&lt;p>If privileges are missing use:&lt;/p>
-&lt;pre tabindex="0">&lt;code>chmod +x yourfile.py
-&lt;/code>&lt;/pre>&lt;p>Now we can open the reverse shell:&lt;/p>
-&lt;p>&lt;img src="https://marioolf.github.io/images/wreath/wreath1.png" alt="">&lt;/p>
-&lt;p>Set up netcat listener to catch reverse shell.&lt;/p>
-&lt;pre tabindex="0">&lt;code>nc -lvnp 4444
-&lt;/code>&lt;/pre>&lt;p>Use rlwrap to stabilise the shell.&lt;/p>
-&lt;p>Now lets get ssh credentials since we won&amp;rsquo;t be able to crack password hash.&lt;/p></description></item><item><title>About</title><link>https://marioolf.github.io/about/</link><pubDate>Sat, 16 Nov 2024 13:47:50 +0100</pubDate><guid>https://marioolf.github.io/about/</guid><description>&lt;p>I work as a Cybersecurity Researcher mainly focused on Confidential Computing technologies and Hardware Hacking. Also, I have deep interest on Pentesting and Active Directory Abuse.&lt;/p>
-&lt;h1 id="studies">Studies&lt;/h1>
-&lt;ul>
-&lt;li>MSc in Cybersecurity from UCAM (Universidad Católica San Antonio de Murcia)&lt;/li>
-&lt;li>Degree in Computer Science from UVigo (Universidade de Vigo)&lt;/li>
-&lt;li>Erasmus+ in Computer Science at ViKo University of Applied Science in Lithuania&lt;/li>
-&lt;/ul>
-&lt;h1 id="certifications">Certifications&lt;/h1>
-&lt;ul>
-&lt;li>Cryptography I from Standford University&lt;/li>
-&lt;li>eJPT Junior Penetration Tester from eLearnSecurity&lt;/li>
-&lt;/ul>
-&lt;h1 id="extra">Extra&lt;/h1>
-&lt;p>&lt;img src="https://marioolf.github.io/images/puursuit.png" alt="tryhackme">&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mario López</title>
+    <link>https://marioolf.github.io/</link>
+    <description>Recent content on Mario López</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jan 2025 16:41:43 +0100</lastBuildDate>
+    <atom:link href="https://marioolf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CRTP Review</title>
+      <link>https://marioolf.github.io/posts/crtp/</link>
+      <pubDate>Wed, 29 Jan 2025 16:41:43 +0100</pubDate>
+      <guid>https://marioolf.github.io/posts/crtp/</guid>
+      <description>&lt;p&gt;Last week, I took the Certified Red Team Professional course. My goal was to build a strong foundation in Active Directory attack and defense, and honestly, I couldn&amp;rsquo;t have asked for a better course. From the materials to the lab experience, everything exceeded my expectations.&lt;/p&gt;&#xA;&lt;h1 id=&#34;course-experience&#34;&gt;Course Experience&lt;/h1&gt;&#xA;&lt;p&gt;I started by watching the video tutorials, which explain core Active Directory concepts. These are a must-watch, as they cover everything essential. Taking good notes on these videos can save you a lot of research time later.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>eJPT Exam Prep</title>
+      <link>https://marioolf.github.io/posts/ejpt/</link>
+      <pubDate>Tue, 19 Nov 2024 21:15:08 +0100</pubDate>
+      <guid>https://marioolf.github.io/posts/ejpt/</guid>
+      <description>&lt;h1 id=&#34;metasploit&#34;&gt;Metasploit&lt;/h1&gt;&#xA;&lt;p&gt;Basic Commands&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;search x&#xA;use x&#xA;info&#xA;show options, show advanced options&#xA;SET X (e.g. set RHOST 10.10.10.10, set payload x)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Meterpreter Commands&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;background&#xA;sessions -l&#xA;sessions -i 1&#xA;sysinfo, ifconfig, route, getuid&#xA;getsystem (privesc)&#xA;bypassuac&#xA;download x /root/&#xA;upload x C:\\Windows&#xA;shell&#xA;use post/windows/gather/hashdump&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;networking-attacks&#34;&gt;Networking Attacks&lt;/h1&gt;&#xA;&lt;p&gt;Brute Force with Hydra&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hydra -L users.txt -P pass.txt -t 10 10.10.10.10 ssh -s 22&#xA;hydra -L users.txt -P pass.txt telnet://10.10.10.10&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Windows Shares with null sessions&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Internal Walkthrough</title>
+      <link>https://marioolf.github.io/posts/internal/internal-walkthrough/</link>
+      <pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate>
+      <guid>https://marioolf.github.io/posts/internal/internal-walkthrough/</guid>
+      <description>&lt;p&gt;So lets deploy the machine and start enumerating.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://marioolf.github.io/images/internal/0.png&#34; alt=&#34;internal1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;We can see ssh open on port 22 and a http web server on port 80. If we enter on 10.10.199.61 we see Apache2 Ubuntu Default Page.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://marioolf.github.io/images/internal/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;After some directory enumeration, we find the following:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/blog&#xA;&#xA;/phpmyadmin&#xA;&#xA;/javascript&#xA;&#xA;/wordpress/wp-login.php&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://marioolf.github.io/images/internal/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;It is necessary to add internal.thm to our /etc/hosts file to navigate through the website.&lt;/p&gt;&#xA;&lt;p&gt;Since we know admin is a user because he has a post on the website, we can brute force the login page using wpscan and rockyou.txt for the password.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wreath Walkthrough</title>
+      <link>https://marioolf.github.io/posts/wreath/wreath-walkthrough/</link>
+      <pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate>
+      <guid>https://marioolf.github.io/posts/wreath/wreath-walkthrough/</guid>
+      <description>&lt;h1 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h1&gt;&#xA;&lt;p&gt;Nmap scan for open ports&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nmap -p-15000 -vv 10.200.81.200&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nmap scan for OS recognition through headers&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nmap -vv 10.200.81.200 --script=http-headers&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h1&gt;&#xA;&lt;p&gt;Once vulnerability is found, download script from github.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/MuirlandOracle/CVE-2019-15107&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For python pip install:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install python3-pip&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If privileges are missing use:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod +x yourfile.py&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now we can open the reverse shell:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://marioolf.github.io/images/wreath/wreath1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Set up netcat listener to catch reverse shell.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nc -lvnp 4444&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Use rlwrap to stabilise the shell.&lt;/p&gt;&#xA;&lt;p&gt;Now lets get ssh credentials since we won&amp;rsquo;t be able to crack password hash.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://marioolf.github.io/about/</link>
+      <pubDate>Sat, 16 Nov 2024 13:47:50 +0100</pubDate>
+      <guid>https://marioolf.github.io/about/</guid>
+      <description>&lt;p&gt;I work as a Cybersecurity Researcher mainly focused on Confidential Computing technologies and Hardware Hacking. Also, I have deep interest on Pentesting and Active Directory Abuse.&lt;/p&gt;&#xA;&lt;h1 id=&#34;studies&#34;&gt;Studies&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;MSc in Cybersecurity from UCAM (Universidad Católica San Antonio de Murcia)&lt;/li&gt;&#xA;&lt;li&gt;Degree in Computer Science from UVigo (Universidade de Vigo)&lt;/li&gt;&#xA;&lt;li&gt;Erasmus+ in Computer Science at ViKo University of Applied Science in Lithuania&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;certifications&#34;&gt;Certifications&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cryptography I from Standford University&lt;/li&gt;&#xA;&lt;li&gt;eJPT Junior Penetration Tester from eLearnSecurity&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;extra&#34;&gt;Extra&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://marioolf.github.io/images/puursuit.png&#34; alt=&#34;tryhackme&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -5,7 +5,7 @@ theme = "cactus"
 
 [services]
     [services.googleAnalytics]
-    id = 'G-SVK5GKD04Z'
+        id = 'G-SVK5GKD04Z'
 
 [params]
   showProjectsList = true

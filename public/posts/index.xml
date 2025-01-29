@@ -6,8 +6,22 @@
     <description>Recent content in Posts on Mario López</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Nov 2024 21:56:18 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2025 16:41:43 +0100</lastBuildDate>
     <atom:link href="https://marioolf.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CRTP Review</title>
+      <link>https://marioolf.github.io/posts/crtp/</link>
+      <pubDate>Wed, 29 Jan 2025 16:41:43 +0100</pubDate>
+      <guid>https://marioolf.github.io/posts/crtp/</guid>
+      <description>&lt;p&gt;Last week, I took the Certified Red Team Professional course. My goal was to build a strong foundation in Active Directory attack and defense, and honestly, I couldn&amp;rsquo;t have asked for a better course. From the materials to the lab experience, everything exceeded my expectations.&lt;/p&gt;&#xA;&lt;h1 id=&#34;course-experience&#34;&gt;Course Experience&lt;/h1&gt;&#xA;&lt;p&gt;I started by watching the video tutorials, which explain core Active Directory concepts. These are a must-watch, as they cover everything essential. Taking good notes on these videos can save you a lot of research time later.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>eJPT Exam Prep</title>
+      <link>https://marioolf.github.io/posts/ejpt/</link>
+      <pubDate>Tue, 19 Nov 2024 21:15:08 +0100</pubDate>
+      <guid>https://marioolf.github.io/posts/ejpt/</guid>
+      <description>&lt;h1 id=&#34;metasploit&#34;&gt;Metasploit&lt;/h1&gt;&#xA;&lt;p&gt;Basic Commands&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;search x&#xA;use x&#xA;info&#xA;show options, show advanced options&#xA;SET X (e.g. set RHOST 10.10.10.10, set payload x)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Meterpreter Commands&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;background&#xA;sessions -l&#xA;sessions -i 1&#xA;sysinfo, ifconfig, route, getuid&#xA;getsystem (privesc)&#xA;bypassuac&#xA;download x /root/&#xA;upload x C:\\Windows&#xA;shell&#xA;use post/windows/gather/hashdump&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;networking-attacks&#34;&gt;Networking Attacks&lt;/h1&gt;&#xA;&lt;p&gt;Brute Force with Hydra&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hydra -L users.txt -P pass.txt -t 10 10.10.10.10 ssh -s 22&#xA;hydra -L users.txt -P pass.txt telnet://10.10.10.10&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Windows Shares with null sessions&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Internal Walkthrough</title>
       <link>https://marioolf.github.io/posts/internal/internal-walkthrough/</link>

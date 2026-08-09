@@ -1,0 +1,38 @@
+{{ define "main" }}
+  {{ $dateFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+  {{ $pages := sort .RegularPages "Date" "desc" }}
+  {{ $paginator := .Paginate $pages }}
+
+  <section class="archive-shell">
+    <div class="section-heading archive-heading">
+      <div>
+        <p class="eyebrow">Archive</p>
+        <h2>All writings</h2>
+        <p class="archive-intro">Writeups, certification reviews, and technical notes collected in one place.</p>
+      </div>
+    </div>
+
+    <div class="archive-grid">
+      {{ range $paginator.Pages }}
+        {{ $excerpt := .Params.description | default (.Summary | plainify | truncate 220) }}
+        {{ if eq $excerpt "" }}
+          {{ $excerpt = .Plain | truncate 220 }}
+        {{ end }}
+        <article class="post-card archive-card">
+          <p class="post-card-date"><time datetime="{{ time .Date }}">{{ .Date.Format $dateFormat }}</time></p>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ $excerpt }}</p>
+          {{ with .Params.tags }}
+            <div class="tag-row">
+              {{ range first 4 . }}
+                <span class="tag-chip">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+
+    {{ partial "pagination.html" . }}
+  </section>
+{{ end }}

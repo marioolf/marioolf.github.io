@@ -10,12 +10,26 @@ theme = "cactus"
 [params]
   showProjectsList = true
   projectsUrl = "https://github.com/marioolf"
-  description = "Cybersecurity Researcher @ Gradiant. MSc in Cybersecurity. Computer Science Engineer. Here I post personal researchs, projects and walkthroughs from different certifications."
+  description = "Security Researcher @ Ikerlan. I publish technical notes, certification writeups, and project updates."
   colortheme = "dark"
   logo = "/images/logo.png"
   css = ["css/custom.css"]
-  mainSectionTitle = "Recent Posts"
+  dateFormat = "2006-01-02"
+  mainSection = "/posts"
+  mainSections = ["posts"]
+  mainSectionTitle = "Latest Writing"
+  postsOnHomePage = 4
   ignoreLogs = ['warning-goldmark-raw-html']
+
+[[params.platforms]]
+    name = "Hack The Box"
+    url = "https://app.hackthebox.com/profile/107620"
+    label = "Labs, boxes, and profile activity"
+
+[[params.platforms]]
+    name = "TryHackMe"
+    url = "https://tryhackme.com/p/puursuit"
+    label = "Rooms, walkthrough context, and learning paths"
 
 [[params.social]]
     name = "linkedin"

@@ -3,17 +3,17 @@
        {
           "name":"CVE Notification Tool",
           "url":"https://github.com/marioolf/cve-analysis",
-          "desc":"MSc Final Project. Analysis of CVE remediation times and Notification Tool for personal software with vulnerabilities."
+          "desc":"MSc final project on CVE remediation times, plus a notification tool for tracking vulnerable software."
        },
        {
           "name":"Rustlings Solutions",
           "url":"https://github.com/marioolf/rustlings-solved",
-          "desc":"Solutions from Rustlings exercices for practicing Rust."
+          "desc":"Solutions to Rustlings exercises for practicing Rust fundamentals."
        },
        {
         "name":"Password Manager",
         "url":"https://github.com/marioolf/PasswordManager",
-        "desc":"Simple password manager for Information Security degree subject. Written in Java, supports multiple encryption algorithms."
+        "desc":"Java password manager built for an information security course, with support for multiple encryption algorithms."
         }
     ]
  }

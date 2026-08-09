@@ -3,12 +3,12 @@
        {
           "name":"Crabby",
           "url":"https://github.com/marioolf/crabby",
-          "desc":"Public project for offensive security and automation work in Rust."
+          "desc":"Rust-written tool for Claude automation."
        },
        {
           "name":"CVE Plugin",
           "url":"https://github.com/marioolf/cve-plugin",
-          "desc":"Plugin focused on CVE enrichment and vulnerability workflow support."
+          "desc":"Obsidian plugin for CVE information."
        },
        {
           "name":"CVE Notification Tool",

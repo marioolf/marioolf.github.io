@@ -34,7 +34,7 @@
       {{ with .Site.Params.platforms }}
         <div class="platform-strip">
           {{ range . }}
-            <a class="platform-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+            <a class="social-link platform-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
           {{ end }}
         </div>
       {{ end }}

@@ -1,19 +1,19 @@
 {
     "list": [
        {
+          "name":"Crabby",
+          "url":"https://github.com/marioolf/crabby",
+          "desc":"Public project for offensive security and automation work in Rust."
+       },
+       {
+          "name":"CVE Plugin",
+          "url":"https://github.com/marioolf/cve-plugin",
+          "desc":"Plugin focused on CVE enrichment and vulnerability workflow support."
+       },
+       {
           "name":"CVE Notification Tool",
           "url":"https://github.com/marioolf/cve-analysis",
           "desc":"MSc final project on CVE remediation times, plus a notification tool for tracking vulnerable software."
-       },
-       {
-          "name":"Rustlings Solutions",
-          "url":"https://github.com/marioolf/rustlings-solved",
-          "desc":"Solutions to Rustlings exercises for practicing Rust fundamentals."
-       },
-       {
-        "name":"Password Manager",
-        "url":"https://github.com/marioolf/PasswordManager",
-        "desc":"Java password manager built for an information security course, with support for multiple encryption algorithms."
         }
     ]
  }

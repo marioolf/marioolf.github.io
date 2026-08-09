@@ -57,14 +57,6 @@ a:hover {
     color: var(--text-secondary) !important;
 }
 
-.hero-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
-    gap: 1.5rem;
-    align-items: start;
-    margin-bottom: 2.5rem;
-}
-
 .hero-copy,
 .signal-card,
 .content-card,
@@ -80,6 +72,7 @@ a:hover {
     padding: 2rem;
     position: relative;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .hero-copy::after {
@@ -101,16 +94,10 @@ a:hover {
     font-size: 0.78rem;
 }
 
-.hero-copy h2,
 .section-heading h2,
 .content-card h2 {
     margin: 0;
     line-height: 1.08;
-}
-
-.hero-copy h2 {
-    font-size: clamp(2.3rem, 5vw, 3.9rem);
-    max-width: 12ch;
 }
 
 .hero-lead,
@@ -124,10 +111,9 @@ a:hover {
     font-size: 1.05rem;
     line-height: 1.8;
     max-width: 62ch;
-    margin: 1.15rem 0 0;
+    margin: 0;
 }
 
-.hero-actions,
 .social-strip,
 .tag-row {
     display: flex;
@@ -135,47 +121,8 @@ a:hover {
     gap: 0.8rem;
 }
 
-.hero-actions {
-    margin-top: 1.5rem;
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 1.2rem;
-    border-radius: 999px;
-    border: 1px solid transparent;
-    font-weight: 600;
-}
-
-.button:hover {
-    transform: translateY(-1px);
-}
-
-.button-primary {
-    background: var(--accent);
-    color: #15120a;
-}
-
-.button-primary:hover {
-    color: #15120a;
-    background: var(--accent-strong);
-}
-
-.button-secondary {
-    background: rgba(82, 209, 197, 0.08);
-    border-color: rgba(82, 209, 197, 0.32);
-    color: var(--text-primary);
-}
-
-.button-secondary:hover {
-    color: var(--text-primary);
-    border-color: rgba(82, 209, 197, 0.55);
-}
-
 .social-strip {
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
 }
 
 .social-link {
@@ -193,19 +140,44 @@ a:hover {
 .section-link:hover,
 .feature-list a:hover,
 .platform-list a:hover,
+.platform-link:hover,
 .post-card h3 a:hover {
     color: var(--accent);
 }
 
-.hero-aside {
-    display: grid;
-    gap: 1rem;
+.home-intro {
+    margin-bottom: 2.2rem;
 }
 
 .signal-card,
 .content-card,
 .post-card {
     padding: 1.35rem;
+}
+
+.home-about-card {
+    max-width: 100%;
+}
+
+.about-copy {
+    max-width: 72ch;
+}
+
+.platform-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.platform-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(82, 209, 197, 0.22);
+    background: rgba(82, 209, 197, 0.06);
+    color: var(--text-primary);
 }
 
 .stats-grid {
@@ -360,7 +332,6 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-    .hero-panel,
     .home-grid,
     .post-grid,
     .archive-grid {
@@ -382,11 +353,8 @@ a:hover {
         border-radius: 18px;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-copy h2 {
-        max-width: none;
+    .platform-strip,
+    .social-strip {
+        gap: 0.6rem;
     }
 }

@@ -1,20 +1,12 @@
 {{ define "main" }}
   {{ $dateFormat := .Site.Params.dateFormat | default "2006-01-02" }}
   {{ $mainPosts := (sort (where site.RegularPages "Type" "in" site.Params.mainSections) "Date" "desc") }}
-  {{ $postCount := len $mainPosts }}
-  {{ $projectCount := len .Site.Data.projects.list }}
-  {{ $researchCount := len .Site.Data.research.list }}
 
-  <section class="hero-panel">
-    <div class="hero-copy">
-      <p class="eyebrow">{{ .Site.Params.hero.eyebrow }}</p>
-      <h2>{{ .Site.Params.hero.title }}</h2>
-      <p class="hero-lead">{{ .Site.Params.hero.lead }}</p>
-
-      <div class="hero-actions">
-        <a class="button button-primary" href="{{ "/posts" | relURL }}">Read the writings</a>
-        <a class="button button-secondary" href="{{ "/about" | relURL }}">See background</a>
-      </div>
+  <section id="about" class="home-intro">
+    <div class="hero-copy home-about-card">
+      {{ with .Site.Params.description }}
+        <p class="hero-lead about-copy">{{ . }}</p>
+      {{ end }}
 
       {{ with .Site.Params.social }}
         <div class="social-strip">
@@ -38,58 +30,18 @@
           {{ end }}
         </div>
       {{ end }}
-    </div>
-
-    <aside class="hero-aside">
-      <div class="signal-card signal-stats">
-        <span class="card-kicker">At a glance</span>
-        <div class="stats-grid">
-          <div>
-            <span>Posts</span>
-            <strong>{{ $postCount }}</strong>
-          </div>
-          <div>
-            <span>Projects</span>
-            <strong>{{ $projectCount }}</strong>
-          </div>
-          <div>
-            <span>Research</span>
-            <strong>{{ $researchCount }}</strong>
-          </div>
-        </div>
-      </div>
-
-      {{ with .Site.Params.focusAreas }}
-        <div class="signal-card">
-          <span class="card-kicker">Focus areas</span>
-          <ul class="focus-list">
-            {{ range . }}
-              <li>
-                <strong>{{ .title }}</strong>
-                <span>{{ .detail }}</span>
-              </li>
-            {{ end }}
-          </ul>
-        </div>
-      {{ end }}
 
       {{ with .Site.Params.platforms }}
-        <div class="signal-card">
-          <span class="card-kicker">Public profiles</span>
-          <ul class="platform-list">
-            {{ range . }}
-              <li>
-                <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-                <span>{{ .label }}</span>
-              </li>
-            {{ end }}
-          </ul>
+        <div class="platform-strip">
+          {{ range . }}
+            <a class="platform-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+          {{ end }}
         </div>
       {{ end }}
-    </aside>
+    </div>
   </section>
 
-  <section class="home-section">
+  <section id="writing" class="home-section">
     <div class="section-heading">
       <div>
         <p class="eyebrow">Latest writing</p>
@@ -120,7 +72,7 @@
     </div>
   </section>
 
-  <section class="home-section home-grid">
+  <section id="projects" class="home-section home-grid">
     <div class="content-card">
       <div class="section-heading compact">
         <div>

@@ -7,8 +7,9 @@ html {
 }
 
 .content.index.py4 {
+    min-height: calc(100% - 1px);
     padding-top: 2.5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 a:hover{
@@ -55,4 +56,9 @@ a:hover{
 
 #header-post .active {
     color: #FFC857 !important;
+}
+
+#footer {
+    bottom: 0.75rem;
+    margin-bottom: 0 !important;
 }

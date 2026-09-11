@@ -1,49 +1,35 @@
-:root {
-    --bg-primary: #101416;
-    --bg-panel: rgba(17, 28, 31, 0.88);
-    --bg-panel-strong: #182226;
-    --border-strong: rgba(255, 200, 87, 0.22);
-    --border-soft: rgba(133, 169, 172, 0.18);
-    --text-primary: #edf4f2;
-    --text-secondary: #adc3c1;
-    --text-muted: #7d9290;
-    --accent: #ffc857;
-    --accent-strong: #ffb703;
-    --accent-cool: #52d1c5;
-    --shadow-panel: 0 24px 60px rgba(0, 0, 0, 0.28);
-}
-
-body {
-    background:
-        radial-gradient(circle at top right, rgba(82, 209, 197, 0.18), transparent 30%),
-        radial-gradient(circle at top left, rgba(255, 200, 87, 0.14), transparent 24%),
-        linear-gradient(180deg, #0d1113 0%, #101416 42%, #111719 100%);
-    color: var(--text-primary);
-}
-
-a {
-    transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-#header,
-#header-post {
-    margin-bottom: 3rem;
-}
-
-#header #logo,
-#header-post #logo {
-    box-shadow: 0 0 0 4px rgba(255, 200, 87, 0.14);
-}
 .h1, .posttitle{
     color: #FFC857 !important;
 }
 
+.content.index.py4 {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
 a:hover{
     text-decoration: none;
+}
+
+#header {
+    margin-bottom: 1.25rem;
+}
+
+#about p {
+    margin: 0 0 0.9rem;
+}
+
+#about p:last-child {
+    margin-bottom: 0;
+}
+
+#writing,
+#projects {
+    margin-top: 2rem;
+}
+
+#projects + #projects {
+    margin-top: 1.6rem;
 }
 
 #header #nav ul a{

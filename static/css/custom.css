@@ -2,6 +2,10 @@
     color: #FFC857 !important;
 }
 
+html {
+    border-top: 0 !important;
+}
+
 .content.index.py4 {
     padding-top: 2.5rem;
     padding-bottom: 2rem;

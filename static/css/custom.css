@@ -6,6 +6,12 @@ html {
     border-top: 0 !important;
 }
 
+#header #logo,
+#header:hover #logo {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
 .content.index.py4 {
     min-height: calc(100% - 1px);
     padding-top: 2.5rem;
@@ -42,6 +48,13 @@ a:hover{
     border-bottom: 10px;
 }
 
+#header #nav ul a:hover,
+#header-post #nav ul a:hover,
+#footer-post #nav-footer a:hover {
+    color: #FFC857 !important;
+    background-image: none !important;
+}
+
 #header #nav ul li{
     border-color: #FFC857 !important;
 }
@@ -50,12 +63,43 @@ a:hover{
     color: #f9da9c !important;
 }
 
+#header-post #nav,
 #header-post #nav ul a{
     color: #FFC857 !important;
 }
 
+#header-post #nav ul li,
+#footer-post #nav-footer li {
+    border-color: #FFC857 !important;
+}
+
 #header-post .active {
     color: #FFC857 !important;
+}
+
+#header-post #menu-icon:hover,
+#header-post #menu-icon-tablet:hover,
+#header-post #top-icon-tablet:hover,
+#header-post a.icon:hover,
+#footer-post a.icon:hover,
+#footer-post #actions-footer a,
+#footer-post #actions-footer a:hover,
+#footer-post #nav-footer a,
+#footer a:hover,
+.pagination a:hover:not(.active),
+article .content h2:before,
+.article-tag .tag-link:before,
+.article-category .category-link,
+#header-post #toc nav > ul > li:before,
+#header-post #toc nav > ul > li > ul > li:before,
+#footer-post #toc-footer #TableOfContents > ul > li:before,
+#footer-post #toc-footer #TableOfContents > ul > li > ul > li:before {
+    color: #FFC857 !important;
+}
+
+#footer-post #actions-footer a,
+#footer-post #nav-footer a {
+    background-image: none !important;
 }
 
 #footer {

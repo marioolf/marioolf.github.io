@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Mario López</title><link>https://marioolf.github.io/posts/</link><description>Recent content in Posts on Mario López</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 09 Aug 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://marioolf.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>On AI on CTFs</title><link>https://marioolf.github.io/posts/ai-on-ctfs/</link><pubDate>Sun, 09 Aug 2026 12:00:00 +0200</pubDate><guid>https://marioolf.github.io/posts/ai-on-ctfs/</guid><description>&lt;h1 id="why-i-am-against-ai-usage-in-ctfs">Why I Am Against AI Usage in CTFs&lt;/h1>
 &lt;p>First of all, I believe CTFs are, at their core, about learning and problem-solving. They present you with a variety of challenges that you are expected to solve yourself, awarding points for each one and ranking players based on how many challenges they manage to solve.&lt;/p>
-&lt;p>Over the last few years, AI usage has skyrocketed in pentesting, and naturally, it has also made its way into CTFs. Nowadays, we can see challenges being solved in seconds and scoreboards reaching extremely high scores only a few minutes into a competition.&lt;/p></description></item><item><title>Internal Walkthrough</title><link>https://marioolf.github.io/posts/internal/internal-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://marioolf.github.io/posts/internal/internal-walkthrough/</guid><description>&lt;p>So lets deploy the machine and start enumerating.&lt;/p>
+&lt;p>Over the last few years, AI usage has skyrocketed in pentesting, and naturally, it has also made its way into CTFs. Nowadays, we can see challenges being solved in seconds and scoreboards reaching extremely high scores only a few minutes into a competition.&lt;/p></description></item><item><title>CRTP Review</title><link>https://marioolf.github.io/posts/crtp/</link><pubDate>Wed, 29 Jan 2025 16:41:43 +0100</pubDate><guid>https://marioolf.github.io/posts/crtp/</guid><description>&lt;p>Last week, I took the Certified Red Team Professional course. My goal was to build a strong foundation in Active Directory attack and defense, and honestly, I couldn&amp;rsquo;t have asked for a better course. From the materials to the lab experience, everything exceeded my expectations.&lt;/p>
+&lt;h1 id="course-experience">Course Experience&lt;/h1>
+&lt;p>I started by watching the video tutorials, which explain core Active Directory concepts. These are a must-watch, as they cover everything essential. Taking good notes on these videos can save you a lot of research time later.&lt;/p></description></item><item><title>eJPT Exam Prep</title><link>https://marioolf.github.io/posts/ejpt/</link><pubDate>Tue, 19 Nov 2024 21:15:08 +0100</pubDate><guid>https://marioolf.github.io/posts/ejpt/</guid><description>&lt;h1 id="metasploit">Metasploit&lt;/h1>
+&lt;p>Basic Commands&lt;/p>
+&lt;pre tabindex="0">&lt;code>search x
+use x
+info
+show options, show advanced options
+SET X (e.g. set RHOST 10.10.10.10, set payload x)
+&lt;/code>&lt;/pre>&lt;p>Meterpreter Commands&lt;/p>
+&lt;pre tabindex="0">&lt;code>background
+sessions -l
+sessions -i 1
+sysinfo, ifconfig, route, getuid
+getsystem (privesc)
+bypassuac
+download x /root/
+upload x C:\\Windows
+shell
+use post/windows/gather/hashdump
+&lt;/code>&lt;/pre>&lt;h1 id="networking-attacks">Networking Attacks&lt;/h1>
+&lt;p>Brute Force with Hydra&lt;/p>
+&lt;pre tabindex="0">&lt;code>hydra -L users.txt -P pass.txt -t 10 10.10.10.10 ssh -s 22
+hydra -L users.txt -P pass.txt telnet://10.10.10.10
+&lt;/code>&lt;/pre>&lt;p>Windows Shares with null sessions&lt;/p></description></item><item><title>Internal Walkthrough</title><link>https://marioolf.github.io/posts/internal/internal-walkthrough/</link><pubDate>Mon, 18 Nov 2024 21:56:18 +0100</pubDate><guid>https://marioolf.github.io/posts/internal/internal-walkthrough/</guid><description>&lt;p>So lets deploy the machine and start enumerating.&lt;/p>
 &lt;p>&lt;img src="https://marioolf.github.io/images/internal/0.png" alt="internal1">&lt;/p>
 &lt;p>We can see ssh open on port 22 and a http web server on port 80. If we enter on 10.10.199.61 we see Apache2 Ubuntu Default Page.&lt;/p>
 &lt;p>&lt;img src="https://marioolf.github.io/images/internal/1.png" alt="">&lt;/p>

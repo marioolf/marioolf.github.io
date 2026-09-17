@@ -5,7 +5,7 @@ title = 'Wreath Walkthrough'
 tags = ["TryHackMe"]
 +++
 
-# Enumeration
+## Enumeration
 
 Nmap scan for open ports
 
@@ -19,7 +19,7 @@ Nmap scan for OS recognition through headers
 nmap -vv 10.200.81.200 --script=http-headers
 ```
 
-# Exploitation
+## Exploitation
 
 Once vulnerability is found, download script from github.
 
@@ -61,7 +61,7 @@ Copy the content of the file to another and use the following command to log thr
 ssh -i key.txt root@ip
 ```
 
-# Pivoting
+## Pivoting
 
 Important paths:
 

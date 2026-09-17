@@ -4,7 +4,7 @@ draft = false
 title = 'eJPT Exam Prep'
 +++
 
-# Metasploit
+## Metasploit
 
 Basic Commands
 
@@ -31,7 +31,7 @@ shell
 use post/windows/gather/hashdump
 ```
 
-# Networking Attacks
+## Networking Attacks
 
 Brute Force with Hydra
 
@@ -60,7 +60,7 @@ arpspoof -i tap0 -t 10.10.10.10 -r 10.10.10.11
 description: Using enum4linux and samrdump.py
 ---
 
-# Null Sessions
+## Null Sessions
 
 ```
 enum4linux -n IP
@@ -76,7 +76,7 @@ nmap -script=smb-enum-users IP
 nmap -script=smb-brute IP
 ```
 
-# Password Bruteforce
+## Password Bruteforce
 
 First we need to prepare the file for John
 
@@ -90,7 +90,7 @@ For hash cracking:
 john -wordlist /path/to/wordlist -users=users.txt hashfile
 ```
 
-# Scanning
+## Scanning
 
 Best NMAP Scan
 
@@ -172,7 +172,7 @@ Nmap SynScan usefull for nullsessions (enum4linux next)
 nmap -sS -p 135,139,445 IP.0-255
 ```
 
-# SQLi
+## SQLi
 
 ```
 sqlmap -u http://10.10.10.10 -p parameter
@@ -198,7 +198,7 @@ This last example is for a GET sql injection. For a POST injection save the post
 sqlmap -r request -p title
 ```
 
-# Subdomain Enumeration
+## Subdomain Enumeration
 
 Dirsearch or gobuster are both good options
 
@@ -207,7 +207,7 @@ dirsearch.py -u http://10.10.10.10 -e *
 gobuster -u 10.10.10.10 -w /path/to/wordlist.txt
 ```
 
-# Vuln Assessment
+## Vuln Assessment
 
 Rapid7
 
@@ -221,7 +221,7 @@ Exploit-DB
 https://www.exploit-db.com/
 ```
 
-# XSS
+## XSS
 
 Reflected XSS = Payload is carried inside the request the victim sends to the website. Typically the link contains the malicious payload&#x20;
 

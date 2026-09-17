@@ -34,7 +34,7 @@
   <div class="home-columns">
     <div class="home-main-column">
       <section id="writing">
-        <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
+        <span class="h1"><a href="{{ .Site.Params.mainSection | relURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
 
         {{ $showAllPostsOnHomePage := false }}
         {{ with .Site.Params.showAllPostsOnHomePage }}
@@ -46,7 +46,7 @@
         <ul class="post-list">
           {{ range (.Paginate $mainPosts).Pages }}
             <li class="post-item">
-              <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
+              <span><a href="{{ .RelPermalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
               <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
             </li>
           {{ end }}
@@ -62,7 +62,7 @@
           {{ end }}
           {{ range first (.Scratch.Get "count") $mainPosts }}
             <li class="post-item">
-              <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
+              <span><a href="{{ .RelPermalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
               <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
             </li>
           {{ end }}

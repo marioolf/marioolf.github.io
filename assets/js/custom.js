@@ -1,17 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var postAnchors = document.querySelectorAll('a[href^="/posts/"], a[href^="https://marioolf.github.io/posts/"]');
+  var anchors = document.querySelectorAll('a[href]');
 
-  postAnchors.forEach(function (anchor) {
+  anchors.forEach(function (anchor) {
     var href = anchor.getAttribute('href');
     var url;
 
-    if (!href) {
+    if (!href || href.charAt(0) === '#') {
+      return;
+    }
+
+    if (href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0 || href.indexOf('javascript:') === 0) {
       return;
     }
 
     url = new URL(href, window.location.origin);
 
-    if (!url.pathname.startsWith('/posts/') || url.pathname === '/posts/') {
+    if (url.origin === window.location.origin) {
       anchor.removeAttribute('target');
       anchor.removeAttribute('rel');
       return;

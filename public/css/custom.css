@@ -156,9 +156,13 @@ a:hover{
     color: #FFC857 !important;
 }
 
+#header-post {
+    right: 0.6rem;
+}
+
 #header-post #nav {
     display: block;
-    margin-right: 2rem;
+    margin-right: 0.4rem;
     text-align: right;
 }
 
@@ -168,6 +172,7 @@ a:hover{
 
 #header-post #toc {
     margin-top: 0.85rem;
+    padding-right: 0.4rem;
 }
 
 #header-post #nav ul li,

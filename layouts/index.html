@@ -1,121 +1,105 @@
 {{ define "main" }}
+  {{ .Scratch.Set "github" "" }}
+  {{ .Scratch.Set "linkedin" "" }}
+  {{ .Scratch.Set "email" "" }}
+  {{ range .Site.Params.social }}
+    {{ if eq .name "github" }}{{ $.Scratch.Set "github" .link }}{{ end }}
+    {{ if eq .name "linkedin" }}{{ $.Scratch.Set "linkedin" .link }}{{ end }}
+    {{ if eq .name "email" }}{{ $.Scratch.Set "email" .link }}{{ end }}
+  {{ end }}
+  {{ .Scratch.Set "htb" "" }}
+  {{ .Scratch.Set "thm" "" }}
+  {{ range .Site.Params.platforms }}
+    {{ if eq .name "Hack The Box" }}{{ $.Scratch.Set "htb" .url }}{{ end }}
+    {{ if eq .name "TryHackMe" }}{{ $.Scratch.Set "thm" .url }}{{ end }}
+  {{ end }}
   <section id="about">
   {{ with .Site.Params.description }}
     {{ . | $.Page.RenderString }}
   {{ end }}
-  {{ with .Site.Params.social }}
-      <p>Find me on
-      {{ $length := len . }}
-      {{ range $index, $elem := . }}
-      {{ if eq $elem.name "email" }}
-        <a class="icon" target="_blank" rel="noopener" href="mailto:{{ $elem.link }}" aria-label="Email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
-        {{ else if eq $elem.name "rss" }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" aria-label="RSS">
-          <i class="fas fa-rss" aria-hidden="true"></i>
-        </a>
-        {{ else if eq $elem.name "scholar" }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" aria-label="Google Scholar">
-          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-        </a>
-        {{ else }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" aria-label="{{ $elem.name }}">
-          <i class="fab fa-{{ lower $elem.name }}" aria-hidden="true"></i>
-        </a>
-        {{ end }}
-        {{ if lt (add $index 2) $length }}
-          {{- print " , " -}}
-        {{ else if lt (add $index 1) $length }}
-          {{- print " and " -}}
-        {{ else }}
-          {{- print "." -}}
-        {{ end }}
-      {{ end }}
-      </p>
-  {{ end }}
-  {{ with .Site.Params.platforms }}
-    <p>Also my HTB and TryHackMe public profiles:
-      {{ $length := len . }}
-      {{ range $index, $platform := . }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $platform.url }}" aria-label="{{ $platform.name }}">
-          {{ $platform.name }}
-        </a>
-        {{ if lt (add $index 2) $length }}
-          {{- print " , " -}}
-        {{ else if lt (add $index 1) $length }}
-          {{- print " and " -}}
-        {{ else }}
-          {{- print "." -}}
-        {{ end }}
-      {{ end }}
+    <p class="profile-links">
+      <span>Links:</span>
+      {{ with .Scratch.Get "github" }}<a target="_blank" rel="noopener" href="{{ . }}">GitHub</a>{{ end }}
+      <span class="sep">/</span>
+      {{ with .Scratch.Get "linkedin" }}<a target="_blank" rel="noopener" href="{{ . }}">LinkedIn</a>{{ end }}
+      <span class="sep">/</span>
+      {{ with .Scratch.Get "email" }}<a href="mailto:{{ . }}">Email</a>{{ end }}
+      <span class="sep">/</span>
+      {{ with .Scratch.Get "htb" }}<a target="_blank" rel="noopener" href="{{ . }}">HTB</a>{{ end }}
+      <span class="sep">/</span>
+      {{ with .Scratch.Get "thm" }}<a target="_blank" rel="noopener" href="{{ . }}">TryHackMe</a>{{ end }}
     </p>
-  {{ end }}
   </section>
 
-  <section id="writing">
-    <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
+  <div class="home-columns">
+    <div class="home-main-column">
+      <section id="writing">
+        <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
 
-    {{ $showAllPostsOnHomePage := false }}
-    {{ with .Site.Params.showAllPostsOnHomePage }}
-      {{ $showAllPostsOnHomePage = . }}
-    {{ end }}
-    {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
-    {{ $mainPosts := sort (where site.RegularPages "Type" "in" site.Params.mainSections) "Date" "desc" }}
-    {{ if $showAllPostsOnHomePage }}
-    <ul class="post-list">
-      {{ range (.Paginate $mainPosts).Pages }}
-        <li class="post-item">
-          <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
-          <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
-        </li>
-      {{ end }}
-    </ul>
-
-    {{ partial "pagination.html" . }}
-
-    {{ else }}
-    <ul class="post-list">
-      {{ .Scratch.Set "count" 5 }}
-      {{ with .Site.Params.postsOnHomePage }}
-        {{ $.Scratch.Set "count" . }}
-      {{ end }}
-      {{ range first (.Scratch.Get "count") $mainPosts }}
-        <li class="post-item">
-          <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
-          <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
-        </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-  </section>
-
-  {{ $showProjectsList := or .Site.Params.showProjectsList .Site.Data.projects }}
-  {{ if $showProjectsList }}
-    {{ $projectsUrl := .Site.Params.projectsUrl | default "#" }}
-  <section id="projects">
-    <span class="h1"><a href="{{ $projectsUrl }}">Projects</a></span>
-    <ul class="project-list">
-        {{ range .Site.Data.projects.list }}
-        <li class="project-item">
-          <a href="{{ .url }}">{{ .name }}</a>: {{ .desc | markdownify }}
-        </li>
+        {{ $showAllPostsOnHomePage := false }}
+        {{ with .Site.Params.showAllPostsOnHomePage }}
+          {{ $showAllPostsOnHomePage = . }}
         {{ end }}
-    </ul>
-  </section>
+        {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+        {{ $mainPosts := sort (where site.RegularPages "Type" "in" site.Params.mainSections) "Date" "desc" }}
+        {{ if $showAllPostsOnHomePage }}
+        <ul class="post-list">
+          {{ range (.Paginate $mainPosts).Pages }}
+            <li class="post-item">
+              <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
+              <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
+            </li>
+          {{ end }}
+        </ul>
 
-  {{ with .Site.Data.research.list }}
-  <section id="projects">
-    <span class="h1"><a href="{{ $projectsUrl }}">Public Researchs</a></span>
-    <ul class="project-list">
-        {{ range . }}
-        <li class="project-item">
-          <a href="{{ .url }}">{{ .name }}</a>: {{ .desc | markdownify }}
-        </li>
+        {{ partial "pagination.html" . }}
+
+        {{ else }}
+        <ul class="post-list">
+          {{ .Scratch.Set "count" 5 }}
+          {{ with .Site.Params.postsOnHomePage }}
+            {{ $.Scratch.Set "count" . }}
+          {{ end }}
+          {{ range first (.Scratch.Get "count") $mainPosts }}
+            <li class="post-item">
+              <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
+              <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
+            </li>
+          {{ end }}
+        </ul>
         {{ end }}
-    </ul>
-  </section>
-  {{ end }}
+      </section>
 
-  {{ end }}
+      {{ $showProjectsList := or .Site.Params.showProjectsList .Site.Data.projects }}
+      {{ if $showProjectsList }}
+        {{ $projectsUrl := .Site.Params.projectsUrl | default "#" }}
+      <section id="projects">
+        <span class="h1"><a href="{{ $projectsUrl }}">Projects</a></span>
+        <ul class="project-list">
+            {{ range .Site.Data.projects.list }}
+            <li class="project-item">
+              <a href="{{ .url }}">{{ .name }}</a>: {{ .desc | markdownify }}
+            </li>
+            {{ end }}
+        </ul>
+      </section>
+      </div>
+
+      {{ with .Site.Data.research.list }}
+      <aside class="home-side-column">
+        <section id="research">
+          <span class="h1"><a href="{{ $projectsUrl }}">Public Research</a></span>
+          <ul class="project-list">
+              {{ range . }}
+              <li class="project-item">
+                <a href="{{ .url }}">{{ .name }}</a>: {{ .desc | markdownify }}
+              </li>
+              {{ end }}
+          </ul>
+        </section>
+      </aside>
+      {{ end }}
+
+      {{ end }}
+  </div>
 {{ end }}

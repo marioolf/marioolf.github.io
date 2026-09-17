@@ -4,6 +4,11 @@
       "name": "JNIC 2024",
       "url": "https://idus.us.es/items/b61e5bee-68e7-444d-a5fd-60be1239c940",
       "desc": "Development of Trusted Services in Kubernetes using Trusted Execution Environments."
+    },
+    {
+      "name": "OOB Vulnerability in NASA's DTN Communication Stack",
+      "url": "/research/nasa-ion-dtn-oob-vulnerability/",
+      "desc": "Writeup of an out-of-bounds read and integer underflow in NASA's ION-DTN implementation, reported through the NASA VDP."
     }
   ]
 }

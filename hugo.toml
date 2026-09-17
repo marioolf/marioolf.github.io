@@ -3,6 +3,13 @@ languageCode = 'en-us'
 title = 'Mario López'
 theme = "cactus"
 
+[markup]
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        lineNos = false
+        noClasses = false
+
 [services]
     [services.googleAnalytics]
         id = 'G-SVK5GKD04Z'
@@ -18,7 +25,7 @@ theme = "cactus"
   mainSection = "/posts"
   mainSections = ["posts"]
   mainSectionTitle = "Latest Writing"
-  postsOnHomePage = 4
+    postsOnHomePage = 5
   ignoreLogs = ['warning-goldmark-raw-html']
 
 [[params.platforms]]

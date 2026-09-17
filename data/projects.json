@@ -14,6 +14,11 @@
           "name":"CVE Notification Tool",
           "url":"https://github.com/marioolf/cve-analysis",
           "desc":"MSc final project on CVE remediation times, plus a notification tool for tracking vulnerable software."
+        },
+       {
+          "name":"rustedr-light",
+          "url":"https://github.com/marioolf/rustedr-light",
+          "desc":"Small Rust-written EDR for Linux, still in development."
         }
     ]
  }

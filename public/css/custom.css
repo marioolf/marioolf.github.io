@@ -156,6 +156,20 @@ a:hover{
     color: #FFC857 !important;
 }
 
+#header-post #nav {
+    display: block;
+    margin-right: 2rem;
+    text-align: right;
+}
+
+#header-post #nav ul {
+    display: inline-block;
+}
+
+#header-post #toc {
+    margin-top: 0.85rem;
+}
+
 #header-post #nav ul li,
 #footer-post #nav-footer li {
     border-color: #FFC857 !important;
@@ -268,11 +282,11 @@ article .content h6:before,
 .highlight,
 .chroma {
     margin: 1.35rem 0;
-    border: 1px solid #dbcba9;
+    border: 1px solid #ece3d2;
     border-radius: 4px;
-    background: #f8f1df !important;
+    background: #fcfbf8 !important;
     color: #2d2418 !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    box-shadow: none;
 }
 
 .highlight pre,
@@ -337,7 +351,7 @@ article .content h6:before,
 .chroma .cp,
 .chroma .cs,
 .chroma .cpf {
-    color: #9c8f78;
+    color: #8e8474;
     font-style: italic;
 }
 

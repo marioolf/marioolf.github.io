@@ -79,8 +79,8 @@ a:hover{
 
 .home-columns {
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.95fr);
-    column-gap: 2.25rem;
+    grid-template-columns: minmax(0, 1.25fr) minmax(240px, 1fr);
+    column-gap: 2.75rem;
     align-items: start;
 }
 
